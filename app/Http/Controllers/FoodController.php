@@ -11,12 +11,12 @@ class FoodController extends Controller
     public function index()
     {
         $foods = Food::latest()->paginate(10);
-        return view('admin.foods.index', compact('foods'));
+        return view('admin.index', compact('foods'));
     }
 
     public function create()
     {
-        return view('admin.foods.create');
+        return view('admin.create');
     }
 
     public function store(Request $request)
@@ -47,7 +47,7 @@ class FoodController extends Controller
 
     public function edit(Food $food)
     {
-        return view('admin.foods.edit', compact('food'));
+        return view('admin.edit', compact('food'));
     }
 
     public function update(Request $request, Food $food)
